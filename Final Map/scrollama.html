@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>  
+
+      #title {
+        margin: 0;
+        font-family: medium;
+        font-feature-settings: normal;
+        font-style: normal;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 3vw;
+        font-weight: lighter;
+        text-align: center;
+        margin-top: 5vh;
+        color:#016363 
+}
+
+      #stepGreen {
+        margin: 0 auto 2rem auto;
+        text-align: center;
+        margin-bottom: 25rem;
+        background-color: #99c0c0;
+        color: black;
+        font-size: 3vw;
+      }
+
+      #step {
+        margin: 0 auto 2rem auto;
+        text-align: center;
+        margin-bottom: 25rem;
+        color: black;
+        font-size: 3vw;
+      }
+
+      #intro-step {
+        margin: 0 auto 2rem auto;
+        text-align: center;
+        margin-bottom: 25rem;
+        background-color: #fff;
+        background-color: #fff;
+        color: black;
+      }
+      
+      #scrolly {
+        position: relative;
+        padding: 1rem;
+      }
+
+      .scrolly-overlay {
+        position: relative;
+        padding: 0;
+        max-width: 35rem;
+        margin: 0 auto;
+      }
+
+      .sticky-thing {
+         position: -webkit-sticky;
+         position: sticky;
+         left: 0;
+         width: 100%;
+         margin: 0;
+         z-index: 0;
+         top: 0;
+         height: 100vh; 
+         display: flex;
+         justify-content: center;
+         flex-direction: column;
+         justify-content: center;
+        }
+    
+
+      .step {
+        margin: 0 auto 2rem auto;
+        text-align: center;
+        margin-bottom: 25rem;
+        background-color: #f8adad;
+        background-color: #fff;
+        color: black;
+        font-size: 2vw;
+      }
+
+      .step p {
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.25rem;
+        border: black;
+      }
+      
+  
+
+      p {
+        margin: 0 auto;
+        font-family: medium;
+        font-feature-settings: normal;
+        font-style: normal;
+        padding-top: 2px;
+        width: 80%;
+        height: 100%;
+        font-size: 2.0rem;
+        font-weight: lighter;
+        text-align: center;
+        margin-top: 5vh;
+ }
+
+      /* .hidden { visibility: hidden; } */
+
+      /* When it's less than 700 pixels wide, do normal scrollytelling */
+      @media only screen and (min-width: 700px) {
+        #scrolly.side-by-side {
+          display: flex;
+        }
+
+        #scrolly.side-by-side > div {
+          flex-basis: 0;
+          flex-grow: 1;
+          flex-shrink: 1;
+          padding: 0.75em;
+        }
+
+        #scrolly.side-by-side .scrolly-overlay {
+          margin-top: 70vh;
+          order: 0;
+          /* Change these to adjust sizing options */
+          min-width: 15rem;
+          max-width: 20rem;
+        }
+
+        #scrolly.side-by-side .sticky-thing {
+          order: 1;
+          flex-grow: 2;
+        }
+      }
+    </style>
+	<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+	
+  </head>
+
+
+
+
+<body>
+  <div id = "title">
+  <h1> Parks to School: How Kids See Their Neighborhood</h1>
+  </div>
+
+  <div id ="stepGreen" id = "step-zero">
+  <p> Meet Alhaji. 
+    <br>He is 16 years old.</p>
+  <img id="alhaji" src="alhaji.png" style="width:350px; margin: 0 auto; display: inline-block;">
+  </div>
+ 
+  <div id = "step" id="step-one">
+      <p> He moved to the United States from Sierra Leone two years ago.  </p>  
+      <img id="sierraLeone" src="sierra-leone.png" style="width:600px; margin: 0 auto; display: block;" >
+    </div>
+
+  <div id="stepGreen" id="step-two">
+      <p> & one of his favorite hobbies is playing soccer.  </p>  
+      <audio controls autoplay>
+        <source src="soccer enjoy.mp3" type="audio/mp3">
+      </audio>
+      </audio>
+    </div>
+
+    <div id="step" id="step-three">
+        <p> Now, Alhaji lives in the Dwight Neighborhood of New Haven, Conneticut.  </p>  
+        <img id="dwightNHV" src="dwightNHV.png" style="width:600px; margin: 0 auto; display: inline-block;">
+      </div>
+
+      <div id="step" id="step-four">
+        <p> which includes all of this.  </p>  
+        <img id="dwightjOutline" src="dwightjOutline.png" style="width:600px; margin: 0 auto; display: inline-block;">
+      </div>
+
+      <div id="stepGreen" id="step-five">
+        <p> Neighborhoods — including Dwight — could seem fleeting and passing. But, there is very carefully crafted design and rituals in neighborhoods, often thought of by neighborhood associations. <br> Dwight's neighborhood association, known as the Greater Dwight Development Corporation, was founded in 1996, with a 30-year Community Plan.  </p> 
+
+     
+         
+
+
+
+</div>
+<div id="scrolly-overlay">
+<div class="before" id="before">
+</div>
+
+      <div id="step" id="step-six">
+        <p> Within Dwight, Alhaji and his family reside here.  </p>  
+        <img id="2" src="2.png" style="width:600px; margin: 0 auto; display: block;" >
+      </div>
+
+      <div id="step" id="step-seven">
+        <p> And he attends  Hillhouse High School.  </p>  
+        <img id="3" src="3.png" style="width:600px; margin: 0 auto; display: block;" >
+      </div>
+
+      <div id="step" id="step-eight">
+        <p> He walks to school along this path every day.  </p> 
+        <audio controls autoplay>
+          <source src="route.mp3" type="audio/mp3">
+        </audio>
+        </audio> 
+        <img id="4" src="4.png" style="width:600px; margin: 0 auto; display: block;" >
+      </div>
+
+      <div id="step" id="step-nine">
+        <p> Alhaji only moved to the Dwight neighborhood two years ago, walking to school each day since. <br>  But he’s also learning quite a bit about the past. We met working on a documentary project about the history of and future for his neighborhood.  </p>  
+        <img id="documentary" src="documentary.JPG" style="width:350px; margin: 0 auto; display: inline-block;">
+      </div>
+  
+      <div id="step" id="step-eleven">
+        <p> The first thing Alhaji told me is that there are no parks along his walk to school, and green space arrives only when he arrives to Hillhouse.  </p>  
+        <audio controls autoplay>
+          <source src="noParks.mp3" type="audio/mp3">
+        </audio>
+        </audio> 
+        <img id="5" src="5.png" style="width:600px; margin: 0 auto; display: block;" >
+      </div>
+
+      <div id="step" id="step-twelve">
+        <p> Sometimes, Alhaji walks to school — even on the weekends — to get to his favorite greenspace: 
+          a soccer field.  </p> 
+        <audio controls autoplay>
+          <source src="soccer.mp3" type="audio/mp3">
+        </audio>
+        </audio>
+        <img id="6" src="6.png" style="width:600px; margin: 0 auto; display: block;" > 
+      </div>
+
+      <div id="step" id="step-thirteen">
+        <p> Edgewood Park is the largest among these.  </p>  
+        <img id="edgewood" src="edgewood.jpg" style="width:600px; margin: 0 auto; display: inline-block;">
+      </div>
+
+      <div id="stepGreen" id="step-fourteen">
+        <p> In 1996, the Greater Dwight Development Corporation (a neighborhood association) released a 30-year Community Plan.  </p>  
+      </div>
+
+      <div id="stepGreen" id="step-fifteen">
+        <p> In the plan, the neighborhood developed an idea for “pocket parks.”  </p>  
+        <img id="parkPlan" src="parkPlan.png" style="width: 500px; margin: 0 auto; display: inline-block;">
+      </div>
+
+      <div id="stepGreen" id="step-sixteen">
+        <p> However, only one “pocket park” has been added since the plan’s creation.  </p>  
+        <img id="lastingPark" src="lastingPark.png" style="width:400px; margin: 0 auto; display: inline-block;">
+      </div>
+
+      <div id="step" id="step-seventeen">
+        <p> Still, the “pocket park” idea is strong, particularly because there are many vacant lots around Alhaji’s walk to school today.  </p> 
+        <img id="7" src="7.png" style="width:600px; margin: 0 auto; display: block;" > 
+      </div>
+
+      <div id="step" id="step-eighteen">
+        <p> But, stronger implementation is necessary in the future to provide more neighborhood greenspace.  </p>  
+      </div>
+
+      <div id="step" id="step-nineteen">
+        <p> Before and since 1996, the Dwight neighborhood has a history of community planning involvement, such as at charrettes.   </p>  
+        <img id="charrettes" src="charette.png" style="width:400px; margin: 0 auto; display: inline-block;">
+      </div>
+
+      <div id="stepGreen" id="step-twenty">
+        <p> This year in 2024, the Greater Dwight Development Corporation is launching the next community planning process for the decades ahead. Neighbors will gather to share hopes and brainstorm ideas for the spaces around them — including green spaces. <br> <br> As community members who see and experience the same neighborhood every day, young people & their insights — like Alhaji and greenspace — deserve to consistently be 
+          part of the 
+          planning 
+          process for the decades ahead. </p>  
+      </div>
+
+
+    <script>
+      
+    /* Scrollytelling code goes under here */
+
+ // Use D3 to select the element and apply the class on page load
+ document.addEventListener("DOMContentLoaded", function() {
+  d3.select("#lot4").classed('hidden', true)
+  d3.select("#lot3").classed('hidden', true)
+  d3.select("#lot5").classed('hidden', true)
+  d3.select("#lot1").classed('hidden', true)
+  d3.select("#pocketParkCircle").classed('hidden', true)
+  d3.select("#hillhousePic").classed('hidden', true)
+  d3.select("#hillhouseOutline").classed('hidden', true)
+  d3.select("#dwightOutline").classed('hidden', true)
+  d3.select("#aptFill").classed('hidden', true)
+  d3.select("#hillhouseOutline2").classed('hidden', true)
+  d3.select("#walkToSchool").classed('hidden', true)
+  d3.select("#aptFill-2").classed('hidden', true)
+  d3.select("#aptPic").classed('hidden', true)
+ });
+
+
+       // Entering Step SIX 
+       d3.select("#step-six").on('stepin',function(e) {
+        d3.select("#aptFill-2").classed('hidden', false)
+        d3.select("#aptPic").classed('hidden', false)
+})
+
+        // Entering Step SEVEN 
+       d3.select("#step-seven").on('stepin',function(e) {
+        d3.select("#aptFill-2").classed('hidden', false)
+        d3.select("#aptPic").classed('hidden', false)
+        d3.select("#hillhousePic").classed('hidden', false)
+        d3.select("#hillhouseOutline").classed('hidden', false)
+        d3.select("#hillhouseOutline2").classed('hidden', false)
+ })
+
+    </script>
+
+<script>
+    const scroller = scrollama();
+
+	scroller
+		.setup({
+			step: "#scrolly .scrolly-overlay .step",
+			offset: 0.75,
+			debug: false
+		})
+		.onStepEnter(function({ element, index, direction}) {
+			const event = new CustomEvent('stepin', { detail: { direction: direction } })
+			element.dispatchEvent(event);
+		})
+		.onStepExit(function({ element, index, direction }) {
+			const event = new CustomEvent('stepout', { detail: { direction: direction } })
+			element.dispatchEvent(event);
+		});
+
+	window.addEventListener("resize", scroller.resize);
+    </script>
+
+
+    <!-- ai2html resizer script -->
+
+<script type="text/javascript">
+  (function() {
+      // only want one resizer on the page
+      if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+      document.documentElement.className += " g-resizer-v3-init";
+      // require IE9+
+      if (!("querySelector" in document)) return;
+      function resizer() {
+          var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+              widthById = {};
+          elements.forEach(function(el) {
+              var parent = el.parentNode,
+                  width = widthById[parent.id] || parent.getBoundingClientRect().width,
+                  minwidth = el.getAttribute("data-min-width"),
+                  maxwidth = el.getAttribute("data-max-width");
+              widthById[parent.id] = width;
+
+              if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+                  el.style.display = "block";
+              } else {
+                  el.style.display = "none";
+              }
+          });
+          try {
+              if (window.parent && window.parent.$) {
+                  window.parent.$("body").trigger("resizedcontent", [window]);
+              }
+              if (window.require) {
+                  require(['foundation/main'], function() {
+                      require(['shared/interactive/instances/app-communicator'], function(AppCommunicator) {
+                          AppCommunicator.triggerResize();
+                      });
+                  });
+              }
+          } catch(e) { console.log(e); }
+      }
+
+      document.addEventListener('DOMContentLoaded', resizer);
+      // feel free to replace throttle with _.throttle, if available
+      window.addEventListener('resize', throttle(resizer, 200));        
+
+      function throttle(func, wait) {
+          // from underscore.js
+          var _now = Date.now || function() { return new Date().getTime(); },
+              context, args, result, timeout = null, previous = 0;
+          var later = function() {
+              previous = _now();
+              timeout = null;
+              result = func.apply(context, args);
+              if (!timeout) context = args = null;
+          };
+          return function() {
+              var now = _now(), remaining = wait - (now - previous);
+              context = this;
+              args = arguments;
+              if (remaining <= 0 || remaining > wait) {
+                  if (timeout) {
+                      clearTimeout(timeout);
+                      timeout = null;
+                  }
+                  previous = now;
+                  result = func.apply(context, args);
+                  if (!timeout) context = args = null;
+              } else if (!timeout && options.trailing !== false) {
+                  timeout = setTimeout(later, remaining);
+              }
+              return result;
+          };
+      }
+
+     
+    })();
+</script>
+
+
+
+  </body>
+
+  
+
+</html>
